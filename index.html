@@ -1,0 +1,583 @@
+<!doctype html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link href="output.css" rel="stylesheet">
+  <link rel="icon" type="image/png" href="favicon-16x16.png">
+  <link rel="stylesheet" href="https://unpkg.com/aos@2.3.1/dist/aos.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/flowbite/2.2.1/flowbite.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"></script>
+</head>
+<body>
+
+  
+
+  <!-- Home -->
+
+  <nav class="fixed top-0 w-full z-50 border-gray-200 bg-transparent backdrop-blur-lg shadow-md dark:bg-transparent dark:border-gray-700">
+    <div class="max-w-screen-xl flex flex-wrap items-center justify-between mx-auto p-4">
+      <div class="flex items-center font-sans italic">
+        <img class="w-24 h-auto rounded-full px-2" src="img/foto2.jpg" alt="">
+      </div>
+  
+      <!-- Menu utama  -->
+      <ul class="hidden lg:flex gap-x-7 font-medium flex-1 justify-end space-x-10">
+        <li>
+          <a href="#Home" class="block py-2 text-white relative transition transform hover:scale-110 group">
+            Home
+            <span class="absolute left-1/2 bottom-0 w-0 h-1 bg-blue-400 rounded-full transition-all duration-300 group-hover:w-full group-hover:left-0 blur-sm"></span>
+          </a>
+        </li>
+        <li>
+          <a href="#About" class="block py-2 text-white relative transition transform hover:scale-110 group">
+            About
+            <span class="absolute left-1/2 bottom-0 w-0 h-1 bg-blue-400 rounded-full transition-all duration-300 group-hover:w-full group-hover:left-0 blur-sm"></span>
+          </a>
+        </li>
+        <li>
+          <a href="#Project" class="block py-2 text-white relative transition transform hover:scale-110 group">
+            Project
+            <span class="absolute left-1/2 bottom-0 w-0 h-1 bg-blue-400 rounded-full transition-all duration-300 group-hover:w-full group-hover:left-0 blur-sm"></span>
+          </a>
+        </li>
+        <li>
+          <a href="#Education" class="block py-2 text-white relative transition transform hover:scale-110 group">
+            Education
+            <span class="absolute left-1/2 bottom-0 w-0 h-1 bg-blue-400 rounded-full transition-all duration-300 group-hover:w-full group-hover:left-0 blur-sm"></span>
+          </a>
+        </li>
+      </ul>
+      
+
+      <!-- Tombol menu burger -->
+      <button data-collapse-toggle="navbar-hamburger" type="button" 
+        class="inline-flex items-center justify-center p-2 w-10 h-10 text-gray-500 rounded-lg hover:bg-gray-100 
+        focus:outline-none focus:ring-2 focus:ring-gray-200 dark:text-gray-400 dark:hover:bg-gray-700 
+        dark:focus:ring-gray-600 lg:hidden" 
+        aria-controls="navbar-hamburger" aria-expanded="false">
+        <span class="sr-only">Open main menu</span>
+        <svg class="w-5 h-5" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 17 14">
+          <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" 
+            d="M1 1h15M1 7h15M1 13h15"/>
+        </svg>
+      </button>
+  
+      <!-- Menu hamburger  -->
+      <div class="hidden w-full lg:hidden" id="navbar-hamburger">
+        <ul class="flex flex-col font-medium mt-4 rounded-lg bg-gray-50 dark:bg-gray-800 dark:border-gray-700">
+          <li>
+            <a href="#Home" class="block py-2 px-3 text-gray-900 rounded-sm hover:bg-gray-100 dark:text-gray-400 dark:hover:bg-gray-700 dark:hover:text-white">Home</a>
+          </li>
+          <li>
+            <a href="#About" class="block py-2 px-3 text-gray-900 rounded-sm hover:bg-gray-100 dark:text-gray-400 dark:hover:bg-gray-700 dark:hover:text-white">About Me</a>
+          </li>
+          <li>
+            <a href="#Project" class="block py-2 px-3 text-gray-900 rounded-sm hover:bg-gray-100 dark:text-gray-400 dark:hover:bg-gray-700 dark:hover:text-white">Project</a>
+          </li>
+          <li>
+            <a href="#Education" class="block py-2 px-3 text-gray-900 rounded-sm hover:bg-gray-100 dark:text-gray-400 dark:hover:bg-gray-700 dark:hover:text-white">Education</a>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+  <script>
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+        anchor.addEventListener("click", function (e) {
+            e.preventDefault();
+            const targetId = this.getAttribute("href").substring(1);
+            const targetElement = document.getElementById(targetId);
+  
+            if (targetElement) {
+                window.scrollTo({
+                    top: targetElement.offsetTop - 50, 
+                    behavior: "smooth"
+                });
+            }
+  
+            // Tutup menu mobile setelah klik
+            const mobileMenu = document.getElementById("navbar-hamburger");
+            if (mobileMenu.classList.contains("block")) {
+                mobileMenu.classList.remove("block");
+                mobileMenu.classList.add("hidden");
+            }
+        });
+    });
+  
+    // Toggle menu mobile
+    document.getElementById("menu-toggle").addEventListener("click", function () {
+        const mobileMenu = document.getElementById("navbar-hamburger");
+        mobileMenu.classList.toggle("hidden");
+        mobileMenu.classList.toggle("block");
+    });
+  </script>
+
+
+  <!-- Isi Pertama -->
+  
+  
+
+  <section id="Home" class="relative h-screen w-full bg-gray-900 overflow-hidden">
+    <!-- Partikel -->
+    <div id="tsparticles" class="absolute inset-0"></div>
+
+    <!-- Konten -->
+    <div class="relative z-10 flex flex-col items-center justify-center text-center h-full text-white">
+        <img src="img/foto-pofil.png" alt="Foto Profil" 
+            class="w-40 h-40 rounded-full border-4 border-b-fuchsia-800 shadow-lg">
+            <h1 class="animate-glitch text-5xl font-extrabold mt-4 text-white">
+              Welcome To My World
+          </h1>
+        <blockquote id="quote" class="text-xl font-semibold italic mt-2">
+            When you look 
+            <span class="text-pink-500">stupid</span>, 
+            look around—there are more stupid people.
+        </blockquote>
+        <a href="#" id="letseeBtn" class="mt-5 px-6 py-3 border border-white rounded-lg hover:bg-white hover:text-gray-900 transition">
+            Let's See
+        </a>
+    </div>
+</section>
+
+<!-- Modal -->
+<div id="modal" class="fixed inset-0 flex items-center justify-center bg-black bg-opacity-50 hidden z-50">
+  <div class="bg-white p-6 rounded-lg shadow-2xl w-96 text-center relative animate-fadeIn">
+      <h2 class="text-xl font-bold text-gray-900">Yo whats Good..</h2>
+      <p class="mt-2 text-gray-700">Maybe web ini bakal terus di kembangkan, So if there is a system error!, Yang mau kasi saran boleh di bawah, form email</p>
+      <button id="closeModal" class="mt-4 px-4 py-2 bg-red-500 text-white rounded hover:bg-red-600">
+          Close
+      </button>
+  </div>
+</div>
+
+<!-- Tambahkan event klik -->
+<script>
+  document.getElementById("letseeBtn").addEventListener("click", function () {
+      document.getElementById("modal").classList.remove("hidden");
+  });
+
+  document.getElementById("closeModal").addEventListener("click", function () {
+      document.getElementById("modal").classList.add("hidden");
+  });
+</script>
+<!-- end modal -->
+
+<!-- Animasi -->
+<style>
+  @keyframes glitch {
+      0% { transform: translate(0); opacity: 1; }
+      25% { transform: translate(-1px, 1px); opacity: 0.9; }
+      50% { transform: translate(1px, -1px); opacity: 1; }
+      75% { transform: translate(-1px, -1px); opacity: 0.95; }
+      100% { transform: translate(0); opacity: 1; }
+  }
+
+  .animate-glitch {
+      animation: glitch 1s infinite;
+  }
+</style>
+
+<style>
+  @keyframes marquee {
+      from { transform: translateX(100%); }
+      to { transform: translateX(-100%); }
+  }
+
+  .animate-marquee {
+      display: inline-block;
+      white-space: nowrap;
+      animation: marquee 20s linear infinite;
+  }
+</style>
+<!-- end animasi -->
+
+
+<!-- Script TS Particles -->
+<script src="https://cdn.jsdelivr.net/npm/tsparticles@2.12.0/tsparticles.bundle.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+<script>
+    // Animasi teks bergerak naik turun terus-menerus
+    gsap.to("#animated-text", { 
+        y: -10, 
+        duration: 1.5, 
+        ease: "power1.inOut", 
+        repeat: -1,  // Animasi infinite
+        yoyo: true   // Gerakan bolak-balik
+    });
+
+    // Animasi teks quote bergerak ke kiri-kanan terus
+    gsap.to("#quote", { 
+        x: 10, 
+        duration: 1.5, 
+        ease: "power1.inOut", 
+        repeat: -1, 
+        yoyo: true 
+    });
+
+    // Animasi tombol naik turun terus-menerus
+    gsap.to("#button", { 
+        y: -5, 
+        duration: 1.2, 
+        ease: "power1.inOut", 
+        repeat: -1, 
+        yoyo: true 
+    });
+
+    // Partikel TS Particles
+    tsParticles.load("tsparticles", {
+        particles: {
+            number: { value: 100, density: { enable: true, value_area: 800 } },
+            color: { value: "#ffffff" },
+            shape: { type: "circle" },
+            opacity: { value: 0.5, random: true },
+            size: { value: 3, random: true },
+            move: { enable: true, speed: 2, direction: "none", random: false, straight: false }
+        },
+        interactivity: {
+            events: {
+                onhover: { enable: true, mode: "grab" }, 
+                onclick: { enable: true, mode: "push" }
+            },
+            modes: {
+                grab: { distance: 150, line_linked: { opacity: 1 } },
+                push: { particles_nb: 4 }
+            }
+        }
+    });
+</script>
+
+
+  
+  <!-- About Me -->
+
+  <section id="About" class="relative h-full bg-center bg-no-repeat bg-cover p-0 py-2" style="background-image: url('img/bg-pertama.jpg');">
+    <div class="absolute left-[-50px] top-1/2 transform -translate-y-1/2 overflow-hidden">
+        <img src="img/as1.png" 
+            class="w-64 opacity-0" 
+            data-aos="fade-right" data-aos-duration="1000">
+    </div>
+
+    <div class="container mx-auto lg:max-w-screen-xl md:max-w-screen-md">
+            <h2 class="text-center text-4xl font-semibold mb-10 text-white 
+                  transition duration-300 hover:text-blue-400 hover:[text-shadow:_0_0_10px_rgb(0,183,255)]">
+                  Summary
+            </h2>
+        <div class="grid grid-cols-1 lg:grid-cols-12 my-16 space-x-5">
+            <!-- Gambar -->
+            <div class="col-span-6 flex justify-center items-center" data-aos="fade-right" data-aos-duration="1000">
+                <img src="img/ai1.png" alt="nothing" width="636" height="808" decoding="async" 
+                    class="w-96 h-96 rounded-lg shadow-lg">
+            </div>
+
+            <!-- Box isi -->
+            <div class="col-span-6 flex flex-col justify-center items-center text-center lg:items-start lg:text-left space-y-4 
+                p-6 shadow-lg rounded-lg bg-gradient-to-r from-cyan-700 to-blue-900 
+                hover:shadow-[0_0_20px_rgba(0,225,255,0.8)] transition-all duration-300"
+                data-aos="fade-left" data-aos-duration="1000">
+                
+                <p class="text-cyan-300 text-lg font-normal tracking-widest uppercase">
+                    Rekayasa Perangkat Lunak
+                </p>
+
+                <h2 class="text-3xl lg:text-5xl font-semibold text-white">
+                    Gilang Pramana
+                </h2>
+
+                <p class="text-gray-300 md:text-lg font-normal">
+                    Sebenarnya ini hanya keisengan saya yah, anda bisa menilai bebas, tapi pada dasarnya pure buatan saya sendiri, 'No Template No Template' HAHAHAHA
+                </p>
+
+                <div class="flex flex-col sm:flex-row items-center sm:items-start space-y-4 sm:space-y-0 sm:space-x-4">
+                    <button class="text-xl font-medium rounded-full text-white py-3 px-6 bg-cyan-600 border border-cyan-400 shadow-md 
+                                    transition-all duration-300 ease-in-out hover:shadow-[0_0_20px_rgba(0,255,255,0.9)] 
+                                    hover:scale-110">
+                        Thankyou!
+                    </button>
+                    <div class="flex items-center space-x-4">
+                      <a href="https://www.facebook.com/share/17xL43JPPY/?mibextid=wwXIfr" class="bg-[#55ACEE] text-white p-4 text-[20px] w-[50px] h-[50px] flex items-center justify-center rounded-full hover:opacity-70">
+                          <i class="fa fa-facebook"></i>
+                      </a>
+                  
+                      <a href="https://www.instagram.com/gilangpramnaaa/?utm_source=ig_web_button_share_sheet" class="bg-[#55ACEE] text-white p-4 text-[20px] w-[50px] h-[50px] flex items-center justify-center rounded-full hover:opacity-70">
+                          <i class="fa fa-instagram"></i>
+                      </a>
+                      <a href="https://learn.microsoft.com/en-us/users/gilangpramana/" class="bg-[#55ACEE] text-white p-4 text-[20px] w-[50px] h-[50px] flex items-center justify-center rounded-full hover:opacity-70">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-microsoft" viewBox="0 0 16 16">
+                          <path d="M7.462 0H0v7.19h7.462zM16 0H8.538v7.19H16zM7.462 8.211H0V16h7.462zm8.538 0H8.538V16H16z"/>
+                        </svg>
+                      </a>
+                      <a href="https://discord.gg/qZ5q8TPY" class="bg-[#55ACEE] text-white p-4 text-[20px] w-[50px] h-[50px] flex items-center justify-center rounded-full hover:opacity-70">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-discord" viewBox="0 0 16 16">
+                          <path d="M13.545 2.907a13.2 13.2 0 0 0-3.257-1.011.05.05 0 0 0-.052.025c-.141.25-.297.577-.406.833a12.2 12.2 0 0 0-3.658 0 8 8 0 0 0-.412-.833.05.05 0 0 0-.052-.025c-1.125.194-2.22.534-3.257 1.011a.04.04 0 0 0-.021.018C.356 6.024-.213 9.047.066 12.032q.003.022.021.037a13.3 13.3 0 0 0 3.995 2.02.05.05 0 0 0 .056-.019q.463-.63.818-1.329a.05.05 0 0 0-.01-.059l-.018-.011a9 9 0 0 1-1.248-.595.05.05 0 0 1-.02-.066l.015-.019q.127-.095.248-.195a.05.05 0 0 1 .051-.007c2.619 1.196 5.454 1.196 8.041 0a.05.05 0 0 1 .053.007q.121.1.248.195a.05.05 0 0 1-.004.085 8 8 0 0 1-1.249.594.05.05 0 0 0-.03.03.05.05 0 0 0 .003.041c.24.465.515.909.817 1.329a.05.05 0 0 0 .056.019 13.2 13.2 0 0 0 4.001-2.02.05.05 0 0 0 .021-.037c.334-3.451-.559-6.449-2.366-9.106a.03.03 0 0 0-.02-.019m-8.198 7.307c-.789 0-1.438-.724-1.438-1.612s.637-1.613 1.438-1.613c.807 0 1.45.73 1.438 1.613 0 .888-.637 1.612-1.438 1.612m5.316 0c-.788 0-1.438-.724-1.438-1.612s.637-1.613 1.438-1.613c.807 0 1.451.73 1.438 1.613 0 .888-.631 1.612-1.438 1.612"/>
+                        </svg>
+                      </a>
+                  </div>
+                  
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section id="Project" class="py-16 relative text-white overflow-hidden">
+
+  <div class="absolute inset-0 bg-gradient-to-b from-black via-indigo-900 to-black">
+    <div id="stars"></div>
+  </div>
+
+  <div class="relative container mx-auto px-6">
+    <h2 class="text-center text-4xl font-semibold mb-10 text-white 
+      transition duration-300 hover:text-blue-400 hover:[text-shadow:_0_0_10px_rgb(0,183,255)]">
+      My Photography Projects
+    </h2>
+
+    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+      <!-- Looping Box Foto -->
+      <div class="photo-box group relative overflow-hidden rounded-lg shadow-lg border border-gray-700 opacity-0 transform scale-75 rotate-6 transition duration-700" data-delay="0">
+        <img src="img/foto-shoot1.jpg" alt="Project 1" class="w-full h-64 object-cover transition duration-300 group-hover:scale-110">
+        <div class="absolute inset-0 bg-black bg-opacity-20 backdrop-blur-md opacity-0 group-hover:opacity-100 transition duration-300 flex items-center justify-center">
+          <p class="text-white text-lg font-semibold">📍Stadion Utama Riau.</p>
+        </div>
+      </div>
+
+      <div class="photo-box group relative overflow-hidden rounded-lg shadow-lg border border-gray-700 opacity-0 transform scale-75 -rotate-6 transition duration-700" data-delay="200">
+        <img src="img/foto-shoot2.jpg" alt="Project 2" class="w-full h-64 object-cover transition duration-300 group-hover:scale-110">
+        <div class="absolute inset-0 bg-black bg-opacity-20 backdrop-blur-md opacity-0 group-hover:opacity-100 transition duration-300 flex items-center justify-center">
+          <p class="text-white text-lg font-semibold">📍Pantai Air Manis, Sumatra Barat.</p>
+        </div>
+      </div>
+
+      <div class="photo-box group relative overflow-hidden rounded-lg shadow-lg border border-gray-700 opacity-0 transform scale-75 rotate-3 transition duration-700" data-delay="400">
+        <img src="img/foto-shoot3.jpg" alt="Project 3" class="w-full h-64 object-cover transition duration-300 group-hover:scale-110">
+        <div class="absolute inset-0 bg-black bg-opacity-20 backdrop-blur-md opacity-0 group-hover:opacity-100 transition duration-300 flex items-center justify-center">
+          <p class="text-white text-lg font-semibold">📍Bukit Gado Gado view Pantai Air Manis, Sumatra Barat.</p>
+        </div>
+      </div>
+
+      <div class="photo-box group relative overflow-hidden rounded-lg shadow-lg border border-gray-700 opacity-0 transform scale-75 -rotate-3 transition duration-700" data-delay="600">
+        <img src="img/foto-shoot4.jpg" alt="Project 4" class="w-full h-64 object-cover transition duration-300 group-hover:scale-110">
+        <div class="absolute inset-0 bg-black bg-opacity-20 backdrop-blur-md opacity-0 group-hover:opacity-100 transition duration-300 flex items-center justify-center">
+          <p class="text-white text-lg font-semibold">📍Alahan Panjang, Kota Solok Sumatra Barat.</p>
+        </div>
+      </div>
+
+      <div class="photo-box group relative overflow-hidden rounded-lg shadow-lg border border-gray-700 opacity-0 transform scale-75 rotate-6 transition duration-700" data-delay="800">
+        <img src="img/foto-shoot5.jpg" alt="Project 5" class="w-full h-64 object-cover transition duration-300 group-hover:scale-110">
+        <div class="absolute inset-0 bg-black bg-opacity-20 backdrop-blur-md opacity-0 group-hover:opacity-100 transition duration-300 flex items-center justify-center">
+          <p class="text-white text-lg font-semibold">📍Alahan Panjang, Kota Solok Sumatra Barat.</p>
+        </div>
+      </div>
+
+      <div class="photo-box group relative overflow-hidden rounded-lg shadow-lg border border-gray-700 opacity-0 transform scale-75 -rotate-6 transition duration-700" data-delay="1000">
+        <img src="img/foto-shoot6.jpg" alt="Project 6" class="w-full h-64 object-cover transition duration-300 group-hover:scale-110">
+        <div class="absolute inset-0 bg-black bg-opacity-20 backdrop-blur-md opacity-0 group-hover:opacity-100 transition duration-300 flex items-center justify-center">
+          <p class="text-white text-lg font-semibold">📍Alahan Panjang, Homestay Kota Solok Sumatra Barat.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="Education" class="py-16 bg-cover bg-center text-white" style="background-image: url('img/education-bg.jpg');">
+  <div class="container mx-auto px-6">
+        <h2 class="text-center text-4xl font-semibold mb-10 text-black 
+            transition duration-300 hover:text-blue-400 hover:[text-shadow:_0_0_10px_rgb(0,183,255)]">
+            Little Education
+        </h2>
+
+    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+      <!-- Edukasi 1 -->
+      <div class="p-6 bg-gray-800 bg-opacity-80 rounded-lg shadow-lg border border-gray-700 opacity-0 transform translate-y-10 transition duration-700 ease-out" data-scroll>
+        <h3 class="text-xl font-bold mb-3">Pentingnya Manajemen Keuangan</h3>
+        <p class="text-gray-300">Mengelola keuangan dengan baik adalah kunci kestabilan finansial. Pelajari bagaimana membuat anggaran dan mengatur investasi dengan bijak.</p>
+      </div>
+
+      <!-- Edukasi 2 -->
+      <div class="p-6 bg-gray-800 bg-opacity-80 rounded-lg shadow-lg border border-gray-700 opacity-0 transform translate-y-10 transition duration-700 ease-out delay-100" data-scroll>
+        <h3 class="text-xl font-bold mb-3">Mengenal Dunia Investasi</h3>
+        <p class="text-gray-300">Dunia investasi luas, mulai dari saham, kripto, hingga reksa dana. Kenali risiko dan peluangnya sebelum terjun.</p>
+      </div>
+
+      <!-- Edukasi 3 -->
+      <div class="p-6 bg-gray-800 bg-opacity-80 rounded-lg shadow-lg border border-gray-700 opacity-0 transform translate-y-10 transition duration-700 ease-out delay-200" data-scroll>
+        <h3 class="text-xl font-bold mb-3">Skill Digital di Era Modern</h3>
+        <p class="text-gray-300">Belajar coding, desain, atau marketing digital bisa membuka banyak peluang karir baru di dunia kerja.</p>
+      </div>
+
+      <!-- Edukasi 4 -->
+      <div class="p-6 bg-gray-800 bg-opacity-80 rounded-lg shadow-lg border border-gray-700 opacity-0 transform translate-y-10 transition duration-700 ease-out delay-300" data-scroll>
+        <h3 class="text-xl font-bold mb-3">Pentingnya Personal Branding</h3>
+        <p class="text-gray-300">Bangun citra profesional yang baik melalui media sosial dan portofolio untuk meningkatkan peluang kerja atau bisnis.</p>
+      </div>
+
+      <!-- Edukasi 5 -->
+      <div class="p-6 bg-gray-800 bg-opacity-80 rounded-lg shadow-lg border border-gray-700 opacity-0 transform translate-y-10 transition duration-700 ease-out delay-400" data-scroll>
+        <h3 class="text-xl font-bold mb-3">Kesehatan Mental dan Produktivitas</h3>
+        <p class="text-gray-300">Jaga keseimbangan antara kerja dan istirahat untuk tetap produktif tanpa mengorbankan kesehatan mental.</p>
+      </div>
+
+      <!-- Edukasi 6 -->
+      <div class="p-6 bg-gray-800 bg-opacity-80 rounded-lg shadow-lg border border-gray-700 opacity-0 transform translate-y-10 transition duration-700 ease-out delay-500" data-scroll>
+        <h3 class="text-xl font-bold mb-3">Membangun Mindset Growth</h3>
+        <p class="text-gray-300">Dengan mindset berkembang, kita bisa lebih adaptif terhadap perubahan dan terus meningkatkan kualitas hidup.</p>
+      </div>
+    </div>
+  </div>
+
+  <script>
+    document.addEventListener("DOMContentLoaded", function() {
+      const elements = document.querySelectorAll("[data-scroll]");
+      const observer = new IntersectionObserver(entries => {
+        entries.forEach(entry => {
+          if (entry.isIntersecting) {
+            entry.target.classList.remove("opacity-0", "translate-y-10");
+            entry.target.classList.add("opacity-100", "translate-y-0");
+          }
+        });
+      }, { threshold: 0.2 });
+      elements.forEach(el => observer.observe(el));
+    });
+  </script>
+</section>
+
+
+<!-- Efek Bintang Animasi -->
+<style>
+  #stars {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    background: url('https://s3-us-west-2.amazonaws.com/s.cdpn.io/1231630/stars.png');
+    animation: move-stars 50s linear infinite;
+    opacity: 0.6;
+  }
+
+  @keyframes move-stars {
+    from {
+      transform: translateY(0);
+    }
+    to {
+      transform: translateY(-100%);
+    }
+  }
+</style>
+
+<!-- Script Animasi Scroll -->
+<script>
+  document.addEventListener("DOMContentLoaded", function () {
+    const boxes = document.querySelectorAll(".photo-box");
+
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach((entry) => {
+        if (entry.isIntersecting) {
+          setTimeout(() => {
+            entry.target.classList.remove("opacity-0", "scale-75", "rotate-6", "-rotate-6", "rotate-3", "-rotate-3");
+            entry.target.classList.add("opacity-100", "scale-100");
+          }, entry.target.dataset.delay);
+        }
+      });
+    }, { threshold: 0.2 });
+
+    boxes.forEach((box) => observer.observe(box));
+  });
+</script>
+
+  <!-- Animasi Scrool About Me -->
+  <script>
+    document
+      .getElementById("menu-toggle")
+      .addEventListener("click", function () {
+        document.getElementById("mobile-menu").classList.toggle("hidden");
+      });
+  </script>
+  <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+  <script>
+    AOS.init();
+  </script>
+
+  
+
+  <footer class="relative bg-gradient-to-r from-gray-800 via-gray-900 to-black text-white py-10 overflow-hidden">
+    <div class="relative container mx-auto px-6 grid grid-cols-1 md:grid-cols-3 gap-8">
+      <div>
+        <h3 class="text-lg font-semibold mb-4">About Company or Me</h3>
+        <p class="text-gray-400">Sebenarnya mau aku letak kan CV di web ini, Tapi masi sedikit ragu untuk mempublikasikan some data, because masi aku anggap sensitif,  So just enjoy it.</p>
+      </div>
+      <!-- Navigasi & Kontak -->
+      <div class="grid grid-cols-2 gap-8">
+        <!-- <div>
+          <h3 class="text-lg font-semibold mb-4">Navigasi</h3>
+          <ul>
+            <li><a href="#Home" class="hover:text-gray-400">Home</a></li>
+            <li><a href="#About" class="hover:text-gray-400">About</a></li>
+            <li><a href="#Project" class="hover:text-gray-400">Masterpiece</a></li>
+            <li><a href="#Education" class="hover:text-gray-400">Education</a></li>
+          </ul>
+        </div> -->
+        <div>
+          <h3 class="text-lg font-semibold mb-4">Contact</h3>
+          <p>Secret</p>
+          <p>Pekanbaru, Indonesia</p>
+        </div>
+      </div>
+  
+      <!-- Sosial Media & Form Email -->
+      <div>
+        <h3 class="text-lg font-semibold mb-4">Email Berfungsi Lho</h3>
+        <form id="contact-form" class="flex flex-col space-y-2">
+          <textarea id="message" placeholder="Pesan Hujatan..." class="p-2 rounded bg-gray-800 text-white border border-gray-700 focus:outline-none focus:border-gray-500"></textarea>
+          <button type="submit" class="bg-blue-500 hover:bg-blue-600 text-white py-2 rounded">Kirim Pesan</button>
+        </form>
+        <p id="status-message" class="text-sm text-gray-400 mt-2"></p>
+      </div>
+    </div>
+    
+    <div class="mt-8 text-center text-gray-500 text-sm">
+      &copy; 2025 Gap. All rights reserved.
+    </div>
+  </footer>
+  
+  <!-- Script Emailjs -->
+
+  <script>
+    (function(){
+      emailjs.init("tFYH_j6PqIX69tI9V"); 
+  
+      document.getElementById('contact-form').addEventListener('submit', function(event) {
+        event.preventDefault();
+        
+        emailjs.send("service_4ibq5b7", "template_eqpvtzn", {
+          message: document.getElementById("message").value
+        })
+        .then(() => {
+          document.getElementById("status-message").textContent = "Thankyou udah kirim pesan!";
+          document.getElementById("message").value = ""; 
+        }, (error) => {
+          document.getElementById("status-message").textContent = "Hayo la error!";
+          console.error("Error:", error);
+        });
+      });
+    })();
+  </script>
+  
+
+<!-- icon -->
+<script src="https://kit.fontawesome.com/YOUR_KIT_CODE.js" crossorigin="anonymous"></script>
+
+<style>
+  @keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+  }
+  .animate-fade-in {
+    animation: fadeIn 1.5s ease-in-out;
+  }
+</style>
+
+
+
+</body>
+</html>
