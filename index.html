@@ -9,10 +9,9 @@
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
   <script src="https://cdnjs.cloudflare.com/ajax/libs/flowbite/2.2.1/flowbite.min.js"></script>
   <script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.5.1"></script>
 </head>
 <body>
-
-  
 
   <!-- Home -->
 
@@ -23,6 +22,7 @@
       </div>
   
       <!-- Menu utama  -->
+      
       <ul class="hidden lg:flex gap-x-7 font-medium flex-1 justify-end space-x-10">
         <li>
           <a href="#Home" class="block py-2 text-white relative transition transform hover:scale-110 group">
@@ -50,7 +50,6 @@
         </li>
       </ul>
       
-
       <!-- Tombol menu burger -->
       <button data-collapse-toggle="navbar-hamburger" type="button" 
         class="inline-flex items-center justify-center p-2 w-10 h-10 text-gray-500 rounded-lg hover:bg-gray-100 
@@ -115,15 +114,11 @@
     });
   </script>
 
-
   <!-- Isi Pertama -->
-  
-  
 
   <section id="Home" class="relative h-screen w-full bg-gray-900 overflow-hidden">
-    <!-- Partikel -->
     <div id="tsparticles" class="absolute inset-0"></div>
-
+    
     <!-- Konten -->
     <div class="relative z-10 flex flex-col items-center justify-center text-center h-full text-white">
         <img src="img/foto-pofil.png" alt="Foto Profil" 
@@ -153,7 +148,7 @@
   </div>
 </div>
 
-<!-- Tambahkan event klik -->
+<!--  event klik -->
 <script>
   document.getElementById("letseeBtn").addEventListener("click", function () {
       document.getElementById("modal").classList.remove("hidden");
@@ -193,9 +188,8 @@
   }
 </style>
 <!-- end animasi -->
-
-
-<!-- Script TS Particles -->
+  
+<!-- Script Particles -->
 <script src="https://cdn.jsdelivr.net/npm/tsparticles@2.12.0/tsparticles.bundle.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
 <script>
@@ -204,11 +198,11 @@
         y: -10, 
         duration: 1.5, 
         ease: "power1.inOut", 
-        repeat: -1,  // Animasi infinite
-        yoyo: true   // Gerakan bolak-balik
+        repeat: -1,  
+        yoyo: true   
     });
 
-    // Animasi teks quote bergerak ke kiri-kanan terus
+    // Animasi teks quote bergerak 
     gsap.to("#quote", { 
         x: 10, 
         duration: 1.5, 
@@ -217,7 +211,7 @@
         yoyo: true 
     });
 
-    // Animasi tombol naik turun terus-menerus
+    // Animasi tombol naik turun 
     gsap.to("#button", { 
         y: -5, 
         duration: 1.2, 
@@ -226,7 +220,7 @@
         yoyo: true 
     });
 
-    // Partikel TS Particles
+    // Partikel Particles
     tsParticles.load("tsparticles", {
         particles: {
             number: { value: 100, density: { enable: true, value_area: 800 } },
@@ -291,10 +285,10 @@
                 </p>
 
                 <div class="flex flex-col sm:flex-row items-center sm:items-start space-y-4 sm:space-y-0 sm:space-x-4">
-                    <button class="text-xl font-medium rounded-full text-white py-3 px-6 bg-cyan-600 border border-cyan-400 shadow-md 
-                                    transition-all duration-300 ease-in-out hover:shadow-[0_0_20px_rgba(0,255,255,0.9)] 
-                                    hover:scale-110">
-                        Thankyou!
+                    <button id="thankyou-btn" class="text-xl font-medium rounded-full text-white py-3 px-6 bg-cyan-600 border border-cyan-400 shadow-md 
+                            transition-all duration-300 ease-in-out hover:shadow-[0_0_20px_rgba(0,255,255,0.9)] 
+                            hover:scale-110">
+                            Thankyou!
                     </button>
                     <div class="flex items-center space-x-4">
                       <a href="https://www.facebook.com/share/17xL43JPPY/?mibextid=wwXIfr" class="bg-[#55ACEE] text-white p-4 text-[20px] w-[50px] h-[50px] flex items-center justify-center rounded-full hover:opacity-70">
@@ -443,8 +437,8 @@
   </script>
 </section>
 
-
 <!-- Efek Bintang Animasi -->
+  
 <style>
   #stars {
     width: 100%;
@@ -466,6 +460,7 @@
 </style>
 
 <!-- Script Animasi Scroll -->
+  
 <script>
   document.addEventListener("DOMContentLoaded", function () {
     const boxes = document.querySelectorAll(".photo-box");
@@ -486,6 +481,7 @@
 </script>
 
   <!-- Animasi Scrool About Me -->
+  
   <script>
     document
       .getElementById("menu-toggle")
@@ -506,17 +502,10 @@
         <h3 class="text-lg font-semibold mb-4">About Company or Me</h3>
         <p class="text-gray-400">Sebenarnya mau aku letak kan CV di web ini, Tapi masi sedikit ragu untuk mempublikasikan some data, because masi aku anggap sensitif,  So just enjoy it.</p>
       </div>
+      
       <!-- Navigasi & Kontak -->
+      
       <div class="grid grid-cols-2 gap-8">
-        <!-- <div>
-          <h3 class="text-lg font-semibold mb-4">Navigasi</h3>
-          <ul>
-            <li><a href="#Home" class="hover:text-gray-400">Home</a></li>
-            <li><a href="#About" class="hover:text-gray-400">About</a></li>
-            <li><a href="#Project" class="hover:text-gray-400">Masterpiece</a></li>
-            <li><a href="#Education" class="hover:text-gray-400">Education</a></li>
-          </ul>
-        </div> -->
         <div>
           <h3 class="text-lg font-semibold mb-4">Contact</h3>
           <p>Secret</p>
@@ -525,6 +514,7 @@
       </div>
   
       <!-- Sosial Media & Form Email -->
+      
       <div>
         <h3 class="text-lg font-semibold mb-4">Email Berfungsi Lho</h3>
         <form id="contact-form" class="flex flex-col space-y-2">
@@ -577,7 +567,16 @@
   }
 </style>
 
-
-
+<!-- script animasi button 'thankyou' -->
+<script>
+  document.getElementById("thankyou-btn").addEventListener("click", function() {
+      confetti({
+          particleCount: 150,
+          spread: 100,
+          origin: { y: 0.6 }
+      });
+  });
+</script>
+  
 </body>
 </html>
