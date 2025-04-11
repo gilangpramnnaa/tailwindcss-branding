@@ -51,41 +51,41 @@
       </ul>
       
       <!-- Tombol menu burger -->
-      <button data-collapse-toggle="navbar-hamburger" type="button"
-            class="inline-flex items-center justify-center p-2 w-10 h-10 text-white bg-slate-800 rounded-lg hover:bg-slate-700
-            focus:outline-none focus:ring-2 focus:ring-slate-400 lg:hidden transition-all duration-200"
-            aria-controls="navbar-hamburger" aria-expanded="false">
-            <span class="sr-only">Open main menu</span>
-            <svg class="w-6 h-6" fill="none" stroke="currentColor" stroke-width="2"
-                  viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-                  <path stroke-linecap="round" stroke-linejoin="round"
-                  d="M4 6h16M4 12h16M4 18h16"></path>
-            </svg>
+     <button id="burger" class="lg:hidden relative w-10 h-10 flex flex-col justify-between items-center z-50 focus:outline-none">
+      <span class="block w-7 h-0.5 bg-white transition-transform duration-300 origin-center"></span>
+      <span class="block w-7 h-0.5 bg-white transition-opacity duration-300"></span>
+      <span class="block w-7 h-0.5 bg-white transition-transform duration-300 origin-center"></span>
     </button>
   
       <!-- Menu hamburger  -->
-      <div class="hidden w-full lg:hidden mt-3 transition-all duration-300 ease-in-out" id="navbar-hamburger">
-        <ul class="flex flex-col font-medium rounded-xl bg-slate-800 p-4 shadow-lg">
-          <li>
-            <a href="#Home"
-              class="block py-2 px-4 text-white rounded-md hover:bg-slate-700 transition-colors duration-200">Home</a>
-          </li>
-          <li>
-            <a href="#About"
-              class="block py-2 px-4 text-white rounded-md hover:bg-slate-700 transition-colors duration-200">About Me</a>
-          </li>
-          <li>
-            <a href="#Project"
-              class="block py-2 px-4 text-white rounded-md hover:bg-slate-700 transition-colors duration-200">Project</a>
-          </li>
-          <li>
-            <a href="#Education"
-              class="block py-2 px-4 text-white rounded-md hover:bg-slate-700 transition-colors duration-200">Education</a>
-          </li>
-        </ul>
+      <div id="menu" class="hidden flex-col mt-4 space-y-2 transition-all duration-500 ease-in-out">
+          <a href="#Home" class="text-white bg-[#1f2937] px-4 py-2 rounded hover:bg-[#374151] transition duration-300">Home</a>
+          <a href="#About" class="text-white bg-[#1f2937] px-4 py-2 rounded hover:bg-[#374151] transition duration-300 delay-75">About Me</a>
+          <a href="#Project" class="text-white bg-[#1f2937] px-4 py-2 rounded hover:bg-[#374151] transition duration-300 delay-100">Project</a>
+          <a href="#Education" class="text-white bg-[#1f2937] px-4 py-2 rounded hover:bg-[#374151] transition duration-300 delay-150">Education</a>
     </div>
   </nav>
+<script>
+  const burger = document.getElementById('burger');
+  const menu = document.getElementById('menu');
+  const lines = burger.querySelectorAll('span');
 
+  let isOpen = false;
+
+  burger.addEventListener('click', () => {
+    isOpen = !isOpen;
+    menu.classList.toggle('hidden');
+
+    // Animasi burger ke X
+    lines[0].classList.toggle('rotate-45');
+    lines[0].classList.toggle('translate-y-2');
+
+    lines[1].classList.toggle('opacity-0');
+
+    lines[2].classList.toggle('-rotate-45');
+    lines[2].classList.toggle('-translate-y-2');
+  });
+</script>
   <script>
     document.querySelectorAll('a[href^="#"]').forEach(anchor => {
         anchor.addEventListener("click", function (e) {
@@ -276,7 +276,7 @@
                 data-aos="fade-left" data-aos-duration="1000">
                 
                 <p class="text-cyan-300 text-lg font-normal tracking-widest uppercase">
-                    Rekayasa Perangkat Lunak
+                    SOFTWARE DEVELOPMENT
                 </p>
 
                 <h2 class="text-3xl lg:text-5xl font-semibold text-white">
@@ -284,7 +284,7 @@
                 </h2>
 
                 <p class="text-gray-300 md:text-lg font-normal">
-                    Sebenarnya ini hanya keisengan saya yah, anda bisa menilai bebas, tapi pada dasarnya pure buatan saya sendiri, 'No Template No Template' HAHAHAHA
+                    Haloo.. Nama ku gilang as gap, so di sini aku sedikit memberikan website portfolioku maybe ini mungkin ini belum terlihat sempurna, tapi cukup lumayan, bagi kalian yang mau di buatin seperti ini bisa contact aku di bawah yak.
                 </p>
 
                 <div class="flex flex-col sm:flex-row items-center sm:items-start space-y-4 sm:space-y-0 sm:space-x-4">
@@ -503,7 +503,7 @@
     <div class="relative container mx-auto px-6 grid grid-cols-1 md:grid-cols-3 gap-8">
       <div>
         <h3 class="text-lg font-semibold mb-4">About Company or Me</h3>
-        <p class="text-gray-400">Sebenarnya mau aku letakkan CV di web ini, Tapi masi sedikit ragu untuk mempublikasikan some data, because masi aku anggap sensitif,  So just enjoy it.</p>
+        <p class="text-gray-400">Maaf ga bisa up CV dulu, takutnya di salah gunakan nanti jadi nikmatin webnya.</p>
       </div>
       
       <!-- Navigasi & Kontak -->
