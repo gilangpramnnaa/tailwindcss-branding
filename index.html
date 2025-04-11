@@ -51,41 +51,71 @@
       </ul>
       
       <!-- Tombol menu burger -->
-     <button id="burger" class="lg:hidden relative w-10 h-10 flex flex-col justify-between items-center z-50 focus:outline-none">
-      <span class="block w-7 h-0.5 bg-white transition-transform duration-300 origin-center"></span>
-      <span class="block w-7 h-0.5 bg-white transition-opacity duration-300"></span>
-      <span class="block w-7 h-0.5 bg-white transition-transform duration-300 origin-center"></span>
+     <button id="burger" type="button"
+        class="inline-flex flex-col justify-between items-center p-2 w-10 h-10 text-white bg-slate-800 rounded-lg hover:bg-slate-700
+        focus:outline-none focus:ring-2 focus:ring-slate-400 lg:hidden transition-all duration-300"
+        aria-controls="navbar-hamburger" aria-expanded="false">
+        <span class="sr-only">Open main menu</span>
+        <span class="w-6 h-0.5 bg-white transition duration-300 origin-center" id="line1"></span>
+        <span class="w-6 h-0.5 bg-white transition duration-300 my-1" id="line2"></span>
+        <span class="w-6 h-0.5 bg-white transition duration-300 origin-center" id="line3"></span>
     </button>
   
       <!-- Menu hamburger  -->
-      <div id="menu" class="hidden flex-col mt-4 space-y-2 transition-all duration-500 ease-in-out">
-          <a href="#Home" class="text-white bg-[#1f2937] px-4 py-2 rounded hover:bg-[#374151] transition duration-300">Home</a>
-          <a href="#About" class="text-white bg-[#1f2937] px-4 py-2 rounded hover:bg-[#374151] transition duration-300 delay-75">About Me</a>
-          <a href="#Project" class="text-white bg-[#1f2937] px-4 py-2 rounded hover:bg-[#374151] transition duration-300 delay-100">Project</a>
-          <a href="#Education" class="text-white bg-[#1f2937] px-4 py-2 rounded hover:bg-[#374151] transition duration-300 delay-150">Education</a>
+      <div class="hidden w-full lg:hidden mt-3 transition-all duration-300 ease-in-out" id="navbar-hamburger">
+        <ul class="flex flex-col font-medium rounded-xl bg-slate-800 p-4 shadow-lg space-y-2 animate-fade-in">
+            <li>
+              <a href="#Home"
+                class="block py-2 px-4 text-white rounded-md hover:bg-slate-700 transition-all duration-300">Home</a>
+            </li>
+            <li>
+              <a href="#About"
+                class="block py-2 px-4 text-white rounded-md hover:bg-slate-700 transition-all duration-300 delay-75">About Me</a>
+            </li>
+            <li>
+              <a href="#Project"
+                class="block py-2 px-4 text-white rounded-md hover:bg-slate-700 transition-all duration-300 delay-100">Project</a>
+            </li>
+            <li>
+              <a href="#Education"
+                class="block py-2 px-4 text-white rounded-md hover:bg-slate-700 transition-all duration-300 delay-150">Education</a>
+            </li>
+        </ul>
     </div>
-  </nav>
+</nav>
+
 <script>
   const burger = document.getElementById('burger');
-  const menu = document.getElementById('menu');
-  const lines = burger.querySelectorAll('span');
+  const menu = document.getElementById('navbar-hamburger');
 
-  let isOpen = false;
+  const line1 = document.getElementById('line1');
+  const line2 = document.getElementById('line2');
+  const line3 = document.getElementById('line3');
 
   burger.addEventListener('click', () => {
-    isOpen = !isOpen;
     menu.classList.toggle('hidden');
 
-    // Animasi burger ke X
-    lines[0].classList.toggle('rotate-45');
-    lines[0].classList.toggle('translate-y-2');
+    line1.classList.toggle('rotate-45');
+    line1.classList.toggle('translate-y-2');
 
-    lines[1].classList.toggle('opacity-0');
+    line2.classList.toggle('opacity-0');
 
-    lines[2].classList.toggle('-rotate-45');
-    lines[2].classList.toggle('-translate-y-2');
+    line3.classList.toggle('-rotate-45');
+    line3.classList.toggle('-translate-y-2');
   });
 </script>
+
+<!-- Tambahin ke Tailwind config atau CDN (kalau belum ada animasinya) -->
+<style>
+  @keyframes fade-in {
+    from { opacity: 0; transform: translateY(-10px); }
+    to { opacity: 1; transform: translateY(0); }
+  }
+  .animate-fade-in {
+    animation: fade-in 0.3s ease-out;
+  }
+</style>
+  
   <script>
     document.querySelectorAll('a[href^="#"]').forEach(anchor => {
         anchor.addEventListener("click", function (e) {
